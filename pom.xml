@@ -10,6 +10,12 @@
     <url>https://github.com/AquanticTech/training-maven-helloworld</url>
     <dependencies>
         <!-- Ajoutez vos dépendances ici -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
         <resources>
