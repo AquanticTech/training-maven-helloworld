@@ -2,18 +2,25 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.aquantic</groupId>
     <artifactId>org-aquantic-maven-HelloWorldApp</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-
     <name>HelloWorldApp</name>
     <url>https://github.com/AquanticTech/training-maven-helloworld</url>
     <dependencies>
         <!-- Ajoutez vos dépendances ici -->
     </dependencies>
     <build>
+        <resources>
+            <resource>
+                <directory>./src</directory>
+                <excludes>
+                    <exclude>.git/**</exclude>
+                    <exclude>.idea/**</exclude>
+                </excludes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -22,14 +29,9 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <!-- Si vous voulez rendre le JAR exécutable: -->
                             <mainClass>org.aquantic.HelloWorldApp</mainClass>
                         </manifest>
                     </archive>
-                    <excludes>
-                        <exclude>.git</exclude>
-                        <!-- Ajoutez d'autres exclusions si nécessaire -->
-                    </excludes>
                 </configuration>
             </plugin>
             <plugin>
@@ -37,10 +39,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <excludes>
-                        <exclude>.git</exclude>
-                        <exclude>target</exclude>
-                    </excludes>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
