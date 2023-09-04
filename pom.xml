@@ -26,6 +26,21 @@
                             <mainClass>org.aquantic.HelloWorldApp</mainClass>
                         </manifest>
                     </archive>
+                    <excludes>
+                        <exclude>.git</exclude>
+                        <!-- Ajoutez d'autres exclusions si nécessaire -->
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <excludes>
+                        <exclude>.git</exclude>
+                        <exclude>target</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
         </plugins>
